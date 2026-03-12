@@ -1,7 +1,7 @@
 pipeline {
 agent any
 
-```
+
 environment {
     IMAGE_NAME = "manojkrishnappa/productcatalogservice:${GIT_COMMIT}"
 }
@@ -61,6 +61,6 @@ post {
         echo "Pipeline failed. Check the logs above."
     }
 }
-```
+
 
 }
