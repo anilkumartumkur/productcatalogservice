@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "manojkrishnappa/productcatalogservice:${GIT_COMMIT}"
+        IMAGE_NAME = "anilkumar1146/productcatalogservice:${GIT_COMMIT}"
     }
 
     stages {
 
         stage('Git Checkout') {
             steps {
-                git url: 'https://github.com/QuntamVector/productcatalogservice.git', branch: 'main'
+                git url: 'https://github.com/anilkumartumkur/productcatalogservice.git', branch: 'main'
             }
         }
 
@@ -58,7 +58,7 @@ pipeline {
                             echo "gitops directory exists. Removing it..."
                             rm -rf gitops
                         fi
-                        git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/QuntamVector/GitOps.git gitops
+                        git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/$GIT_USERNAME/GitOps.git gitops
                         cd gitops/base/productcatalogservice/
 
                         git config user.email "jenkins@ci.com"
