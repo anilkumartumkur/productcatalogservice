@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+    go 'go'
+    }
+    
 
     environment {
         IMAGE_NAME = "anilkumar1146/productcatalogservice:${GIT_COMMIT}"
